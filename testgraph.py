@@ -1,0 +1,55 @@
+from graph import gr
+from graph import gr1
+from graph import gr2
+from graph import gr3
+
+
+a = gr()
+a.add_vertex(1)
+a.add_vertex(2)
+a.add_vertex(3)
+a.add_vertex(4)
+a.add_edge(1, 2)
+a.add_edge(1, 3)
+a.add_edge(2, 3)
+a.add_edge(2, 4)
+a.add_edge(3, 4)
+print("---------------------------------------")
+print("Топологическая сортировка:")
+print(a.topological_sort())
+print("---------------------------------------")
+
+b = gr1()
+b.add_vertex()
+b.add_vertex()
+b.add_vertex()
+b.add_edge(0, 1)
+b.add_edge(1, 2)
+b.add_edge(2, 0)
+print("Алгоритм Флюри:")
+print(gr1.fleury(b))
+print("---------------------------------------")
+
+c = gr2()
+c.add_edge(2, 3)
+c.add_edge(3, 4)
+c.add_edge(4, 2)
+c.add_edge(2, 1)
+c.add_edge(1, 3)
+c.add_edge(2, 4)
+print("Эйлеров цикл:")
+print(c.find_eulerian_cycle())
+print("---------------------------------------")
+
+d = gr3()
+d.add_edge(1, 2)
+d.add_edge(2, 3)
+d.add_edge(3, 1)
+d.add_edge(3, 4)
+d.add_edge(4, 5)
+d.add_edge(5, 6)
+d.add_edge(6, 4)
+print("Сильно связанные компоненты:")
+for component in d.kosaraju():
+    print(component)
+print("---------------------------------------")
