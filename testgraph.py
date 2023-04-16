@@ -1,8 +1,4 @@
-from graph import gr
-from graph import gr1
-from graph import gr2
-from graph import gr3
-
+from graph import *
 
 a = gr()
 a.add_vertex(1)
